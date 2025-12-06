@@ -1,62 +1,458 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CV - علی قاسم‌زاده</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      line-height: 1.6;
-      direction: rtl;
-      text-align: right;
-    }
-    h1, h2 { color: #333; }
-    .header {
-      border-bottom: 1px solid #ddd;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-    }
-    .section { margin-bottom: 20px; }
-    a { text-decoration: none; }
-    ul { padding-right: 18px; }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Ali Ghasemzadeh – CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="header">
-    <h1>علی قاسم‌زاده</h1>
-    <p>
-      ایمیل: <a href="mailto:you@example.com">you@example.com</a><br>
-      گیتهاب: <a href="https://github.com/Alighasemdazeh83">github.com/Alighasemdazeh83</a>
-    </p>
+
+  <!-- ===== TOP HEADER WITH SHARIF LOGO ===== -->
+  <header class="top-header">
+    <img src="logo.png" alt="Sharif University Logo" class="top-logo" />
+  </header>
+
+  <div class="app">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="sidebar">
+
+      <!-- PROFILE SECTION -->
+      <div class="profile">
+        <div class="avatar-wrapper">
+          <img src="me.jpg" alt="Ali Ghasemzadeh" class="avatar" />
+        </div>
+
+        <h1 class="name">Ali Ghasemzadeh</h1>
+
+        <p class="title">
+          Sharif University of Technology (SUT)<br />
+          BSc. Computer Engineering<br />
+          Minor in Mathematics
+        </p>
+      </div>
+
+      <!-- CONTACT LINKS IN SIDEBAR -->
+      <div class="sidebar-links">
+        <!-- ایمیل‌ها با کادر -->
+        <a href="mailto:lyqasmadh72@gmail.com" class="sidebar-link boxed-email" target="_blank">
+          ✉️ lyqasmadh72@gmail.com
+        </a>
+        <a href="mailto:ali.ghasem01@sharif.edu" class="sidebar-link boxed-email" target="_blank">
+          ✉️ ali.ghasem01@sharif.edu
+        </a>
+
+        <a href="https://www.linkedin.com/in/ali-ghasemzadeh-bb6904266/" class="sidebar-link" target="_blank">
+          💼 LinkedIn
+        </a>
+
+        <a
+          href="https://scholar.google.com/citations?hl=fa&view_op=list_works&gmla=AElLoL1v5b0HU9KVctR50kzC5Qxu0slrMXXyTqYG43XIQXXITvqOHP4VYfNI2BIy-nFC-CtrPjL595sQtF_wI-33EmQzi6U5ASf1AwNkzgJ92rssC-dAlTC0Rb26y8wPac7-RwEAvyrl6r5qKWbELQo&user=FBckop0AAAAJ"
+          class="sidebar-link"
+          target="_blank"
+        >
+          🎓 Google Scholar
+        </a>
+
+        <!-- لینک دانلود CV -->
+        <a
+          href="Ali_Ghasemzadeh_CV.pdf"
+          class="sidebar-link"
+          target="_blank"
+          download
+        >
+          📄 Download CV (PDF)
+        </a>
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="nav">
+        <a href="#bio" class="nav-link active">Bio</a>
+        <a href="#research-interests" class="nav-link">Research Interests</a>
+        <a href="#research-experience" class="nav-link">Research Experience</a>
+        <a href="#publications" class="nav-link">Publications & Preprints</a>
+        <a href="#honors" class="nav-link">Honors</a>
+        <a href="#courses" class="nav-link">Related Courses & Self Studies</a>
+        <a href="#ta" class="nav-link">Teaching Assistantships</a>
+        <a href="#skills" class="nav-link">Technical & Research Skills</a>
+        <a href="#repos" class="nav-link">Selected Course Repositories</a>
+      </nav>
+
+      <button id="theme-toggle" class="theme-toggle" type="button">
+        🌙 Dark mode
+      </button>
+    </aside>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="content">
+
+        <!-- BIO = Profile -->
+        <section id="bio" class="section">
+            <div class="section-header">
+            <h2>BIO</h2>
+            <button class="toggle-btn" type="button" aria-label="Toggle section">−</button>
+            </div>
+            <div class="section-body">
+            <p>
+                I am a fourth-year Computer Engineering student at Sharif University of Technology,
+                with a minor in Mathematics. My research spans <strong>optimization</strong>
+                (convex, non-convex, and evolutionary methods), <strong>machine learning</strong>,
+                and <strong>computer vision</strong>, including adversarial training,
+                domain adaptation, and LLM-based reasoning. Supported by a strong mathematical
+                background and extensive self-study, I have built solid foundations in
+                optimization and learning theory.
+            </p>
+            <p>
+                I complement this grounding with substantial <strong>practical expertise</strong>:
+                implementing and extending deep-learning and vision models in PyTorch,
+                designing experiments, and planning ablations.
+                Through contributing to two surveys and two research papers, I have gained experience in
+                <strong>literature synthesis, paper writing, experimental methodology</strong>, and
+                structuring large-scale reviews.
+            </p>
+            <p>
+                As the <strong>lead researcher within the team</strong> in several projects,
+                I have organized the team, assigned tasks based on members' strengths,
+                contributed to idea development, and carried out a major share of the
+                implementation and experimentation across all stages of the work.
+            </p>
+            </div>
+        </section>
+
+        <!-- Publications & Preprints -->
+        <section id="publications" class="section">
+            <div class="section-header">
+            <h2>Publications & Preprints</h2>
+            <button class="toggle-btn" type="button" aria-label="Toggle section">−</button>
+            </div>
+            <div class="section-body">
+            <ul>
+                <li>
+                <strong>Toward Accurate RUL and SOH Estimation Using Reinforced Graph-based PINNs</strong><br />
+                <em>Under review, Journal of Manufacturing Systems.</em><br />
+                Role: Co-author — contributed to conceptual design, PINN implementation,
+                and the RL-based weighting module.<br />
+                <a href="https://arxiv.org/abs/2507.09766" target="_blank">arXiv link</a>
+                </li>
+                <li>
+                <strong>Learning Under Joint Domain Evolution: Progressive Multi-Source Domain Adaptation</strong><br />
+                <em>Under review, CVPR 2026.</em><br />
+                Role: Lead author — originated the idea, developed the temporal-alignment framework,
+                implemented the full adaptation pipeline, and led writing.
+                </li>
+            </ul>
+            </div>
+        </section>
+
+        <!-- Research Interests -->
+        <section id="research-interests" class="section">
+        
+            <!-- HEADER -->
+            <div class="section-header">
+                <h2>Research Interests</h2>
+                <button class="toggle-btn" type="button" aria-label="Toggle section">−</button>
+            </div>
+
+            <!-- BODY -->
+            <div class="section-body">
+                
+                <p>
+                My research interests center on the mathematical foundations of learning,
+                applied machine learning, and the development of deep learning and large
+                language models with strong reasoning capabilities.
+                </p>
+
+                <div class="ri-grid">
+                
+                <!-- LEFT COLUMN — MATHEMATICS -->
+                <div class="ri-column">
+                    <h3><strong>Mathematics</strong></h3>
+                    <ul>
+                    <li>Convex optimization</li>
+                    <li>Continuous optimization</li>
+                    <li>Evolutionary optimization</li>
+                    <li>Bandit algorithms &amp; online learning</li>
+                    <li>Real analysis</li>
+                    <li>Statistics</li>
+                    <li>Estimation theory</li>
+                    <li>Game theory</li>
+                    <li>Decision-making under uncertainty</li>
+                    </ul>
+                </div>
+
+                <!-- RIGHT COLUMN — APPLIED ML + DEEP LEARNING -->
+                <div class="ri-column">
+                    <h3><strong>Applied Machine Learning</strong></h3>
+                    <ul>
+                    <li>Bioinformatics</li>
+                    <li>Medical reasoning</li>
+                    <li>Predictive maintenance (PDM)</li>
+                    </ul>
+
+                    <h3><strong>Deep Learning and Practical Works</strong></h3>
+                    <ul>
+                    <li>Deep learning</li>
+                    <li>Large language models (LLMs)</li>
+                    <li>LLM reasoning</li>
+                    </ul>
+                </div>
+
+                </div>
+            
+            </div>
+            </section>
+
+
+        <!-- Research Experience (خلاصه + لینک به صفحه projects.html) -->
+        <section id="research-experience" class="section">
+            <div class="section-header">
+            <h2>Research Experience</h2>
+            <button class="toggle-btn" type="button" aria-label="Toggle section">−</button>
+            </div>
+            <div class="section-body">
+            <ul>
+                <li>
+                <strong>Learning Under Joint Domain Evolution: Progressive Multi-Source Domain Adaptation</strong>
+                <span class="item-date">Jan 2025 – Nov 2025</span>
+                </li>
+                <li>
+                <strong>Remaining Useful Life Prediction via PINNs and Reinforcement Learning</strong>
+                <span class="item-date">Jan 2025 – Jun 2025</span>
+                </li>
+                <li>
+                <strong>Automated Boundary Update for White-Box and Black-Box Optimization</strong>
+                <span class="item-date">Mar 2025 – Present</span>
+                </li>
+                <li>
+                <strong>LLM-Driven Metaheuristic Code Generation</strong>
+                <span class="item-date">Jun 2025 – Present</span>
+                </li>
+                <li>
+                <strong>LLMs and Reasoning</strong>
+                <span class="item-date">Jun 2025 – Present</span>
+                </li>
+                <li>
+                <strong>Constraint-Generalized Nonlinear Benchmark Generator (GNBG)</strong>
+                <span class="item-date">Oct 2025 – Present</span>
+                </li>
+                <li>
+                <strong>Medical Reasoning with LLMs</strong>
+                <span class="item-date">Jul 2025 – Present</span>
+                </li>
+                <li>
+                <strong>Semidefinite Programming &amp; Robust Optimization</strong>
+                <span class="item-date">Oct 2025 – Present</span>
+                </li>
+                <li>
+                <strong>Enhancing DiscoCLIP for Compositionality and Quantum-Circuit Modeling</strong>
+                <span class="item-date">Sep 2025 – Present</span>
+                </li>
+                <li>
+                <strong>Adaptive Batched Adversarial Linear Bandit</strong>
+                <span class="item-date">Jun 2025 – Present</span>
+                </li>
+                <li>
+                <strong>Feature-Based Auction Design</strong>
+                <span class="item-date">Apr 2025 – Jul 2025</span>
+                </li>
+            </ul>
+
+            <p style="margin-top: 8px; font-size: 0.9rem;">
+                For full descriptions and my detailed role in each project, see the
+                <a href="projects.html">projects page</a>.
+            </p>
+            </div>
+        </section>
+
+        <!-- Honors -->
+        <section id="honors" class="section">
+            <div class="section-header">
+            <h2>Honors</h2>
+            <button class="toggle-btn" type="button" aria-label="Toggle section">−</button>
+            </div>
+            <div class="section-body">
+            <ul>
+                <li>
+                <strong>Top 2</strong> students in Convex Optimization — Fall 2025
+                </li>
+                <li>
+                <strong>Top 1</strong> students in Estimation Theory — Spring 2025
+                </li>
+                <li>
+                <strong>Top 0.05%</strong> in National University Entrance Exam (Konkur) — 2022
+                </li>
+                <li>
+                <strong>Top 25%</strong> of cohort based on GPA — Present
+                </li>
+            </ul>
+            </div>
+        </section>
+
+        <!-- Related Courses & Self Studies -->
+        <section id="courses" class="section">
+            <div class="section-header">
+            <h2>Related Courses & Self Studies</h2>
+            <button class="toggle-btn" type="button" aria-label="Toggle section">−</button>
+            </div>
+
+            <div class="section-body">
+
+            <h3>Selected Coursework</h3>
+
+            <!-- Two-column list -->
+            <div class="two-col-list">
+                <ul>
+                <li><strong>Convex Optimization</strong></li>
+                <li><strong>Generative Models</strong></li>
+                <li><strong>Reinforcement Learning</strong></li>
+                <li><strong>Estimation Theory</strong></li>
+                <li><strong>Stochastic Processes</strong></li>
+                <li><strong>Real Analysis</strong></li>
+                <li><strong>Game Theory</strong></li>
+                </ul>
+
+                <ul>
+                <li>Machine Learning</li>
+                <li>Artificial Intelligence</li>
+                <li>Linear Algebra</li>
+                <li>Probability &amp; Statistics</li>
+                <li>Data Structures</li>
+                <li>Automata Theory</li>
+                </ul>
+            </div>
+
+            <h3>Self-Study &amp; Certifications</h3>
+
+            <!-- Two-column list -->
+            <div class="two-col-list">
+                <ul>
+                <li>Online Learning &amp; Bandits (Sharif, Kasra Alishahi)</li>
+                <li>Deep Learning (Sharif, Mahdieh Soleymani)</li>
+                <li>Generative Models (Stanford, Stefano Ermon)</li>
+                <li>Convex Optimization (Stanford, Stephen Boyd)</li>
+                <li>Game Theory (Sharif, Kasra Alishahi)</li>
+                </ul>
+
+                <ul>
+                <li>CS336 Language Modeling from Scratch (ongoing)</li>
+                <li>CS231N Deep Learning for Computer Vision (ongoing)</li>
+                <li>CS224N NLP with Deep Learning (ongoing)</li>
+                <li>CS330 Deep Multi-Task &amp; Meta Learning (ongoing)</li>
+                </ul>
+            </div>
+
+            </div>
+    
+        </section>
+
+      <!-- Teaching Assistantships -->
+      <section id="ta" class="section">
+        <div class="section-header">
+          <h2>Teaching Assistantships</h2>
+          <button class="toggle-btn" type="button" aria-label="Toggle section">−</button>
+        </div>
+        <div class="section-body">
+          <ul>
+            <li>ML Theory (Fall 2025)</li>
+            <li>Machine Learning (Spring 2025)</li>
+            <li>Probability &amp; Statistics (Spring &amp; Fall 2024)</li>
+            <li>Linear Algebra (Fall 2024)</li>
+            <li>Automata Theory (Fall 2024)</li>
+            <li>Fundamentals of Programming (Fall 2023)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Technical & Research Skills -->
+      <section id="skills" class="section">
+        <div class="section-header">
+          <h2>Technical & Research Skills</h2>
+          <button class="toggle-btn" type="button" aria-label="Toggle section">−</button>
+        </div>
+        <div class="section-body">
+
+            <div class="skills-grid">
+
+                <!-- LEFT COLUMN -->
+                <div class="skills-column">
+                <h3><strong>Machine Learning</strong></h3>
+                <ul>
+                    <li>Python, PyTorch, TensorFlow, scikit-learn</li>
+                    <li>Diffusion models</li>
+                    <li>GANs and Adversarial Training</li>
+                    <li>Reinforcement learning</li>
+                </ul>
+
+                <h3><strong>Optimization &amp; Theory</strong></h3>
+                <ul>
+                    <li>Convex, Non-Convex Optimization, Evolutionary Optimization</li>
+                    <li>Estimation Theory</li>
+                    <li>Probability &amp; stochastic processes</li>
+                    <li>Bandit</li>
+                    <li>Linear algebra</li>
+                </ul>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="skills-column">
+                <h3><strong>Software</strong></h3>
+                <ul>
+                    <li>C, C++, Git, Linux</li>
+                    <li>Reproducible research workflows</li>
+                </ul>
+
+                <h3><strong>Research Tools</strong></h3>
+                <ul>
+                    <li>LaTeX and scientific writing</li>
+                    <li>Paper summarization and literature review</li>
+                    <li>Mentoring and guiding junior teammates</li>
+                </ul>
+
+                <h3><strong>Languages</strong></h3>
+                <ul>
+                    <li>Persian (native)</li>
+                    <li>English (fluent)</li>
+                </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+      </section>
+
+      <!-- Selected Course Repositories -->
+      <section id="repos" class="section">
+        <div class="section-header">
+          <h2>Selected Course Repositories</h2>
+          <button class="toggle-btn" type="button" aria-label="Toggle section">−</button>
+        </div>
+        <div class="section-body">
+          <ul>
+            <li>
+              <strong>QSM-for-Games</strong> — Score-matching generative models for multi-domain game datasets.
+              <a href="https://github.com/Alighasemzadeh83/QSM-for-games" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <strong>Pix2Pix-from-Scratch</strong> — Paired image-to-image GAN implemented in PyTorch.
+              <a href="https://github.com/Alighasemzadeh83/Pix2Pix-from-scratch" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <strong>U-Net Semantic Segmentation</strong> — Full PyTorch semantic segmentation pipeline using U-Net.
+              <a href="https://github.com/Alighasemzadeh83/University_AI/tree/main/project1/Unet_semantic_segmentation" target="_blank">GitHub</a>
+            </li>
+            <li>
+              <strong>Reinforcement Learning (A2C)</strong> — Actor–Critic implementation for control tasks.
+              <a href="https://github.com/Alighasemzadeh83/University_AI/tree/main/project2/rl" target="_blank">GitHub</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
   </div>
 
-  <div class="section">
-    <h2>درباره من</h2>
-    <p>اینجا بعداً یک معرفی کوتاه از خودت می‌نویسی.</p>
-  </div>
-
-  <div class="section">
-    <h2>تحصیلات</h2>
-    <ul>
-      <li>کارشناسی …</li>
-      <li>کارشناسی ارشد …</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>سوابق پژوهشی / کاری</h2>
-    <ul>
-      <li>…</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>پروژه‌ها</h2>
-    <ul>
-      <li>پروژه X — لینک گیتهاب یا PDF</li>
-    </ul>
-  </div>
+  <script src="script.js"></script>
 </body>
 </html>
