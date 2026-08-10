@@ -1,34 +1,37 @@
-# Ali Ghasemzadeh – Academic Homepage
+# Ali Ghasemzadeh — Personal Academic Website
 
-This repository contains the source code for my personal academic website, hosted through **GitHub Pages**.  
-The website provides an overview of my background, research interests, academic activities, and technical skills.
+Source for [alighasemzadeh83.github.io](https://alighasemzadeh83.github.io), hosted on **GitHub Pages**.
 
-### 🔹 Website Features
-- Responsive, clean, and modern design  
-- Sidebar navigation with dark/light mode  
-- Organized sections for:
-  - Bio  
-  - Research Interests  
-  - Research Experience  
-  - Publications & Preprints  
-  - Honors  
-  - Selected Courses  
-  - Teaching Assistantships  
-  - Technical & Research Skills  
-  - Course Repositories  
-- Two-column layouts for compact and readable content (Research Interests & Skills)  
-- Smooth scrolling and section toggle animations  
-- Fully static (HTML + CSS + JavaScript)
+A single-page academic homepage built with plain **HTML, CSS, and JavaScript**
+(no build step, no framework). It presents:
 
-### 🔹 Technologies Used
-- **HTML5**  
-- **CSS3** (custom design with gradients, responsive grid, dark mode)  
-- **JavaScript** (smooth navigation, theme switching, interactive sections)  
-- **GitHub Pages** for hosting  
+- A short bio and research interests (computer vision, estimation theory,
+  convex & semidefinite optimization, medical AI).
+- Research internship at The University of Hong Kong.
+- Publications & manuscripts, each with its method / main figure and a status
+  badge (accepted / under review / preprint).
+- Ongoing research projects and advisors.
+- An **interactive collaboration network** of co-authors and advisors, grouped
+  by institution ([vis-network](https://github.com/visjs/vis-network)).
+- Honors, teaching, and contact information.
 
-### 🔹 How to Run Locally
-Clone the repository:
+## Structure
+
+```
+index.html   — page content
+style.css    — styling (dark / light themes)
+script.js    — theme toggle, scrollspy, collaboration network
+img/         — profile photo + paper figures
+Ali_Ghasemzadeh_CV.pdf
+```
+
+## Local preview
+
+Open `index.html` in a browser, or serve the folder:
 
 ```bash
-git clone https://github.com/USERNAME/USERNAME.github.io
-cd USERNAME.github.io
+python -m http.server 8000
+```
+
+The collaboration network loads `vis-network` from a CDN; everything else works
+fully offline.
