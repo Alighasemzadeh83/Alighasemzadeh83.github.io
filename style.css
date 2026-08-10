@@ -357,7 +357,7 @@ body::before {
   box-shadow: var(--shadow);
   overflow: hidden;
 }
-#net-graph { width: 100%; height: 560px; background: transparent; }
+#net-graph { width: 100%; height: 640px; background: transparent; }
 .net-fallback { padding: 40px; text-align: center; color: var(--text-faint); font-size: .9rem; }
 .net-legend {
   display: flex;
@@ -373,6 +373,7 @@ body::before {
 .net-legend .swatch { width: 11px; height: 11px; border-radius: 50%; flex: none; }
 .net-legend .swatch.sq { border-radius: 3px; }
 .net-legend .swatch.dm { border-radius: 2px; transform: rotate(45deg); width: 10px; height: 10px; }
+.net-legend .swatch.ring { background: transparent; border: 2px solid #ffffff; box-shadow: 0 0 0 1px var(--border); }
 .net-note { padding: 10px 2px 0; font-size: .82rem; color: var(--text-faint); }
 
 /* ===================== CONTACT ===================== */
@@ -405,6 +406,57 @@ footer {
   padding: 30px 0 6px;
 }
 
+/* ===================== NEWS ===================== */
+.news { list-style: none; margin: 0; padding: 0; }
+.news li {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 14px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border-soft);
+  align-items: baseline;
+}
+.news li:last-child { border-bottom: none; }
+.news-date {
+  font-size: .78rem;
+  font-weight: 650;
+  color: var(--accent-2);
+  white-space: nowrap;
+}
+.news-text { font-size: .92rem; color: var(--text-dim); }
+.news-text strong { color: var(--text); font-weight: 640; }
+
+/* ===================== REPOSITORIES ===================== */
+.repo-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+.repo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: border-color .18s ease, transform .18s ease;
+}
+.repo:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.repo-name {
+  font-weight: 680;
+  font-size: .98rem;
+  color: var(--text);
+  display: flex; align-items: center; gap: 7px;
+}
+.repo-name::before {
+  content: "";
+  width: 15px; height: 15px; flex: none;
+  background: currentColor;
+  color: var(--accent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7 0-.7 0-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7 0-.7 0-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2 0-.3-.5-1.5.2-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.repo-desc { font-size: .86rem; color: var(--text-dim); }
+.repo-tag { font-size: .74rem; color: var(--text-faint); margin-top: 2px; }
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; gap: 26px; padding: 20px 16px 60px; }
@@ -413,10 +465,12 @@ footer {
   .sidenav a { border-left: none; border-bottom: 2px solid transparent; }
   .sidenav a.active { border-left: none; border-bottom-color: var(--accent); }
   .ongoing-grid { grid-template-columns: 1fr; }
+  .repo-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 620px) {
   .pub { grid-template-columns: 1fr; }
   .pub-fig { max-width: 340px; margin: 0 auto; width: 100%; }
   .hero h1 { font-size: 1.7rem; }
-  #network { height: 460px; }
+  #net-graph { height: 520px; }
+  .news li { grid-template-columns: 76px 1fr; gap: 10px; }
 }

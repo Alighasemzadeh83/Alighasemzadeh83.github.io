@@ -51,16 +51,16 @@ sections.forEach(s => spy.observe(s));
     return;
   }
 
-  /* --- institution color groups --- */
+  /* --- institution color groups (distinct, theme-friendly palette) --- */
   const GROUPS = {
-    me:        { label: 'Ali Ghasemzadeh', color: '#f5c451' },
-    sharif:    { label: 'Sharif Univ. of Technology', color: '#38bdf8' },
-    toronto:   { label: 'University of Toronto', color: '#4f8cff' },
-    hongkong:  { label: 'Hong Kong (HKU / CUHK)', color: '#a78bfa' },
+    me:        { label: 'Ali Ghasemzadeh', color: '#f4c430' },
+    sharif:    { label: 'Sharif Univ. of Technology', color: '#14b8a6' },
+    toronto:   { label: 'University of Toronto', color: '#3b82f6' },
+    hongkong:  { label: 'Hong Kong (HKU / CUHK)', color: '#a855f7' },
     australia: { label: 'Australia (Torrens / UTS)', color: '#fb923c' },
-    europe:    { label: 'Europe', color: '#34d399' },
-    namerica:  { label: 'North America', color: '#f472b6' },
-    other:     { label: 'Collaborators', color: '#94a3b8' }
+    europe:    { label: 'Europe', color: '#22c55e' },
+    namerica:  { label: 'North America', color: '#f43f5e' },
+    other:     { label: 'Other collaborators', color: '#94a3b8' }
   };
 
   /* --- people (id, name, group, affiliation, optional role/url) --- */
@@ -127,43 +127,48 @@ sections.forEach(s => spy.observe(s));
     ['x_market','Market Mechanism Design', ['ali','fallah']]
   ];
 
-  /* --- build edges + degree --- */
-  const edges = [];
-  const degree = {};
-  const bump = (id) => { degree[id] = (degree[id] || 0) + 1; };
-  PAPERS.forEach(([pid,,, members]) => members.forEach(m => { edges.push({ from: pid, to: m }); bump(m); }));
-  PROJECTS.forEach(([pid,, members]) => members.forEach(m => { edges.push({ from: pid, to: m, dashes: true }); bump(m); }));
+  /* --- co-authorship: connect people who share a paper or project --- */
+  const worklists = PAPERS.map(p => p[3]).concat(PROJECTS.map(p => p[2]));
+  const edgeWeight = {};          // "a|b" -> number of shared works
+  const collaborators = {};       // id -> Set of co-workers
+  const linkUp = (a, b) => {
+    (collaborators[a] = collaborators[a] || new Set()).add(b);
+    (collaborators[b] = collaborators[b] || new Set()).add(a);
+  };
+  worklists.forEach(members => {
+    for (let i = 0; i < members.length; i++) {
+      for (let j = i + 1; j < members.length; j++) {
+        const a = members[i], b = members[j];
+        const key = a < b ? a + '|' + b : b + '|' + a;
+        edgeWeight[key] = (edgeWeight[key] || 0) + 1;
+        linkUp(a, b);
+      }
+    }
+  });
+  const edges = Object.keys(edgeWeight).map(key => {
+    const [a, b] = key.split('|');
+    const w = edgeWeight[key];
+    return { from: a, to: b, value: w, title: w + ' shared work' + (w > 1 ? 's' : '') };
+  });
 
-  /* --- person nodes --- */
+  /* --- person nodes only; size = number of collaborators --- */
   const nodes = [];
   PEOPLE.forEach(([id, name, group, aff, role, url]) => {
     const isMe = group === 'me';
-    const deg = degree[id] || 1;
-    const tip = `<b>${name}</b><br>${aff}${role ? '<br><i>' + role + '</i>' : ''}${url ? '<br>↗ Google Scholar' : ''}`;
+    const deg = collaborators[id] ? collaborators[id].size : 1;
+    const tip = `<b>${name}</b><br>${aff}` +
+                (role ? `<br><i>${role}</i>` : '') +
+                `<br>${deg} collaborator${deg === 1 ? '' : 's'}` +
+                (url ? '<br>↗ Google Scholar' : '');
     nodes.push({
       id, label: name, group,
-      value: isMe ? 40 : deg,
+      value: isMe ? 46 : deg,
       shape: 'dot',
-      color: { background: GROUPS[group].color, border: GROUPS[group].color },
+      color: { background: GROUPS[group].color, border: isMe ? '#ffffff' : GROUPS[group].color },
+      borderWidth: role ? 3 : 2,     // advisors get a slightly thicker ring
       title: tip,
       url: url || null,
-      font: { size: isMe ? 22 : 13.5 }
-    });
-  });
-  /* --- paper nodes --- */
-  PAPERS.forEach(([id, label, venue]) => {
-    nodes.push({
-      id, label, group: '_paper', shape: 'square', value: 8,
-      color: { background: '#5b6b82', border: '#8ea3bf' },
-      title: `<b>${label}</b><br>${venue}`, font: { size: 12 }
-    });
-  });
-  /* --- project nodes --- */
-  PROJECTS.forEach(([id, label]) => {
-    nodes.push({
-      id, label, group: '_project', shape: 'diamond', value: 7,
-      color: { background: '#1f8f78', border: '#3fd6b4' },
-      title: `<b>${label}</b><br>Ongoing project`, font: { size: 11.5 }
+      font: { size: isMe ? 20 : 13 }
     });
   });
 
@@ -176,19 +181,19 @@ sections.forEach(s => spy.observe(s));
     autoResize: true,
     nodes: {
       borderWidth: 2,
-      scaling: { min: 8, max: 42, label: { enabled: true, min: 11, max: 22 } },
+      scaling: { min: 11, max: 48, label: { enabled: true, min: 12, max: 22 } },
       shadow: { enabled: true, size: 6, x: 0, y: 2, color: 'rgba(0,0,0,0.25)' }
     },
     edges: {
-      width: 0.9,
-      smooth: { type: 'continuous', roundness: 0.4 },
-      color: { color: 'rgba(255,255,255,0.14)', highlight: '#6ea8fe', hover: '#6ea8fe' }
+      scaling: { min: 0.5, max: 3.6 },
+      smooth: { type: 'continuous', roundness: 0.35 },
+      color: { color: 'rgba(255,255,255,0.12)', highlight: '#4f8cff', hover: '#4f8cff' }
     },
-    interaction: { hover: true, tooltipDelay: 90, navigationButtons: false, keyboard: false },
+    interaction: { hover: true, tooltipDelay: 90, navigationButtons: false, keyboard: false, hideEdgesOnDrag: true },
     physics: {
       solver: 'barnesHut',
-      barnesHut: { gravitationalConstant: -9000, centralGravity: 0.32, springLength: 120, springConstant: 0.035, damping: 0.4, avoidOverlap: 0.25 },
-      stabilization: { iterations: 320, updateInterval: 30 }
+      barnesHut: { gravitationalConstant: -20000, centralGravity: 0.16, springLength: 175, springConstant: 0.025, damping: 0.55, avoidOverlap: 0.85 },
+      stabilization: { iterations: 700, updateInterval: 40 }
     }
   };
 
@@ -225,8 +230,7 @@ sections.forEach(s => spy.observe(s));
     Object.values(GROUPS).forEach(g => {
       html += `<span class="lg"><span class="swatch" style="background:${g.color}"></span>${g.label}</span>`;
     });
-    html += `<span class="lg"><span class="swatch sq" style="background:#8ea3bf"></span>Paper</span>`;
-    html += `<span class="lg"><span class="swatch dm" style="background:#3fd6b4"></span>Ongoing project</span>`;
+    html += `<span class="lg"><span class="swatch ring"></span>Advisor (thicker ring)</span>`;
     legend.innerHTML = html;
   }
 

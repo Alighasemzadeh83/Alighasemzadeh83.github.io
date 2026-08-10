@@ -45,11 +45,13 @@
 
         <nav class="sidenav" id="sidenav">
           <a href="#about">About</a>
+          <a href="#news">News</a>
           <a href="#interests">Research Interests</a>
           <a href="#internship">Internship</a>
           <a href="#publications">Publications</a>
           <a href="#ongoing">Ongoing Research</a>
           <a href="#network">Collaboration Network</a>
+          <a href="#repos">Repositories</a>
           <a href="#honors">Honors &amp; Teaching</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -85,6 +87,19 @@
           <span class="tag">Medical AI</span>
           <span class="tag">Bandits &amp; Online Learning</span>
         </div>
+      </section>
+
+      <!-- NEWS -->
+      <section id="news" class="section">
+        <h2 class="section-title"><span class="dot"></span>News</h2>
+        <ul class="news">
+          <li><span class="news-date">Jul 2026</span><span class="news-text">Started as a Research Intern at <strong>The University of Hong Kong</strong> (Dept. of Data and Systems Engineering).</span></li>
+          <li><span class="news-date">2026</span><span class="news-text"><strong>PriLoRA</strong> was <strong>accepted at MICCAI 2026</strong>.</span></li>
+          <li><span class="news-date">2026</span><span class="news-text">Our reinforced graph-based PINN paper was <strong>accepted at Advanced Engineering Informatics</strong>.</span></li>
+          <li><span class="news-date">2026</span><span class="news-text"><strong>Spectral Palette</strong> and <strong>Learning Under Joint Domain Evolution</strong> submitted to <strong>AAAI</strong>.</span></li>
+          <li><span class="news-date">2026</span><span class="news-text"><strong>GNBG-C</strong> submitted to the <strong>European Journal of Operational Research</strong>.</span></li>
+          <li><span class="news-date">2025</span><span class="news-text">Ranked <strong>1st</strong> in Estimation Theory and <strong>2nd</strong> in Convex Optimization.</span></li>
+        </ul>
       </section>
 
       <!-- RESEARCH INTERESTS -->
@@ -302,13 +317,51 @@
       <section id="network" class="section">
         <h2 class="section-title"><span class="dot"></span>Collaboration Network</h2>
         <p class="net-note">
-          An interactive map of my collaborators and advisors. Circles are people (colored by
-          institution), squares are papers, and diamonds are ongoing projects &mdash; each linked
-          to its authors. Drag nodes, scroll to zoom, and hover for details.
+          An interactive map of my collaborators and advisors. Each circle is a person, colored by
+          institution and sized by how many people they have worked with; two people are linked when
+          they share a paper or project (thicker links = more shared work). Drag nodes, scroll to
+          zoom, hover for details, and click a person to open their profile.
         </p>
         <div class="net-wrap">
           <div id="net-graph"><div class="net-fallback">Loading collaboration network&hellip;</div></div>
           <div class="net-legend" id="net-legend"></div>
+        </div>
+      </section>
+
+      <!-- REPOSITORIES -->
+      <section id="repos" class="section">
+        <h2 class="section-title"><span class="dot"></span>Selected Repositories</h2>
+        <div class="repo-grid">
+          <a class="repo" href="https://github.com/Alighasemzadeh83/GNBG-C" target="_blank" rel="noopener">
+            <span class="repo-name">GNBG-C</span>
+            <span class="repo-desc">Configurable benchmark generator for constrained continuous optimization, with controllable feasible-region properties and known reference optima.</span>
+            <span class="repo-tag">Research software · Python</span>
+          </a>
+          <a class="repo" href="https://github.com/xmindflow/PriLoRA" target="_blank" rel="noopener">
+            <span class="repo-name">PriLoRA</span>
+            <span class="repo-desc">Official implementation of Prior-Conditioned Low-Rank Adapters for medical vision models (MICCAI 2026).</span>
+            <span class="repo-tag">Research software · PyTorch</span>
+          </a>
+          <a class="repo" href="https://github.com/Alighasemzadeh83/QSM-for-games" target="_blank" rel="noopener">
+            <span class="repo-name">QSM-for-Games</span>
+            <span class="repo-desc">Score-matching generative models for multi-domain game datasets.</span>
+            <span class="repo-tag">Course project · Generative models</span>
+          </a>
+          <a class="repo" href="https://github.com/Alighasemzadeh83/Pix2Pix-from-scratch" target="_blank" rel="noopener">
+            <span class="repo-name">Pix2Pix-from-Scratch</span>
+            <span class="repo-desc">Paired image-to-image translation GAN implemented from scratch in PyTorch.</span>
+            <span class="repo-tag">Course project · GANs</span>
+          </a>
+          <a class="repo" href="https://github.com/Alighasemzadeh83/University_AI/tree/main/project1/Unet_semantic_segmentation" target="_blank" rel="noopener">
+            <span class="repo-name">U-Net Semantic Segmentation</span>
+            <span class="repo-desc">Full PyTorch semantic-segmentation pipeline built around a U-Net backbone.</span>
+            <span class="repo-tag">Course project · Computer vision</span>
+          </a>
+          <a class="repo" href="https://github.com/Alighasemzadeh83/University_AI/tree/main/project2/rl" target="_blank" rel="noopener">
+            <span class="repo-name">Reinforcement Learning (A2C)</span>
+            <span class="repo-desc">Advantage Actor–Critic implementation for control tasks.</span>
+            <span class="repo-tag">Course project · RL</span>
+          </a>
         </div>
       </section>
 
