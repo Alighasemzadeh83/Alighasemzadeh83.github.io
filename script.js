@@ -73,6 +73,8 @@ sections.forEach(s => spy.observe(s));
     ['azad','Reza Azad','europe','RWTH Aachen University',null,'https://scholar.google.com/citations?user=Qb5ildMAAAAJ'],
     ['samek','Wojciech Samek','europe','Fraunhofer HHI / TU Berlin',null,'https://scholar.google.com/citations?user=7aQwO08AAAAJ'],
     ['merhof','Dorit Merhof','europe','University of Regensburg',null,'https://scholar.google.com/citations?user=0c0rMr0AAAAJ'],
+    ['yousef','Yousef Sadegheih','europe','University of Regensburg',null,'https://scholar.google.com/citations?user=NbPKWfEAAAAJ'],
+    ['pratibha','Pratibha Kumari','europe','University of Regensburg',null,'https://scholar.google.com/citations?user=gm0ORicAAAAJ'],
     ['diba','Ali Diba','europe','KU Leuven',null,'https://scholar.google.com/citations?user=T9Kr7gEAAAAJ'],
     ['torr','Philip Torr','europe','University of Oxford',null,'https://scholar.google.com/citations?user=kPxa2w0AAAAJ'],
     ['barletta','Luca Barletta','europe','Politecnico di Milano','Advisor · Excess estimation error','https://scholar.google.com/citations?user=vu_mjR0AAAAJ'],
@@ -119,6 +121,8 @@ sections.forEach(s => spy.observe(s));
 
   /* --- ongoing projects (id, label, member ids) --- */
   const PROJECTS = [
+    ['x_brainmets','Brain Metastasis Segmentation', ['ali','yousef','pratibha','merhof']],
+    ['x_continual','Continual Learning (OOD)', ['ali','yousef','merhof']],
     ['x_bandit','Adaptive Metaheuristics', ['ali','mirjalili','gandomi']],
     ['x_excess','Excess Estimation Error', ['ali','dytso','barletta']],
     ['x_invcdf','Inverse-CDF Differentiation', ['ali','dytso']],

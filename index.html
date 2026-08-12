@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
   <div class="layout">
@@ -94,6 +94,7 @@
         <h2 class="section-title"><span class="dot"></span>News</h2>
         <ul class="news">
           <li><span class="news-date">Jul 2026</span><span class="news-text">Started as a Research Intern at <strong>The University of Hong Kong</strong> (Dept. of Data and Systems Engineering).</span></li>
+          <li><span class="news-date">Jul 2026</span><span class="news-text">Began collaborations with the <strong>University of Regensburg</strong> on brain-metastasis segmentation and continual learning for out-of-distribution data.</span></li>
           <li><span class="news-date">2026</span><span class="news-text"><strong>PriLoRA</strong> was <strong>accepted at MICCAI 2026</strong>.</span></li>
           <li><span class="news-date">2026</span><span class="news-text">Our reinforced graph-based PINN paper was <strong>accepted at Advanced Engineering Informatics</strong>.</span></li>
           <li><span class="news-date">2026</span><span class="news-text"><strong>Spectral Palette</strong> and <strong>Learning Under Joint Domain Evolution</strong> submitted to <strong>AAAI</strong>.</span></li>
@@ -244,12 +245,13 @@
 
         <!-- 9 -->
         <article class="pub">
-          <div class="pub-fig"><img src="img/refseg.jpg" alt="Reference-based medical image segmentation survey" loading="lazy" /></div>
+          <div class="pub-fig"><img src="img/refseg.jpg" alt="Text-guided medical image segmentation survey" loading="lazy" /></div>
           <div class="pub-body">
-            <h3 class="pub-title">Reference-Based Medical Image Segmentation Survey</h3>
+            <h3 class="pub-title">Text-Guided Medical Image Segmentation: A Survey</h3>
             <p class="pub-authors">Erfan Babakhani, <span class="me">Ali Ghasemzadeh</span><span class="eq">*</span>, Armin Khosravi, Pariya Ghasemzadeh, Amirhossein Kazerouni, Yong-Hong Kuo, Seyedali Mirjalili</p>
             <div class="pub-meta"><span class="badge pre">Preprint</span><span class="role-tag">*Co-first author</span></div>
-            <p class="pub-desc">Co-led the literature curation and analysis, identified methodological strengths and limitations, and developed the taxonomy and comparative framework.</p>
+            <p class="pub-desc">Co-led the literature curation and analysis, and developed the taxonomy and comparative framework for text-guided medical image segmentation.</p>
+            <div class="pub-links"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7249378" target="_blank" rel="noopener">SSRN</a></div>
           </div>
         </article>
       </section>
@@ -257,6 +259,24 @@
       <!-- ONGOING RESEARCH -->
       <section id="ongoing" class="section">
         <h2 class="section-title"><span class="dot"></span>Ongoing Research</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <p class="entry-title">Brain Metastasis Segmentation: Loss Function Design</p>
+            <span class="entry-date">Jul 2026 &ndash; Present</span>
+          </div>
+          <p class="entry-sub">Collaborators: Yousef Sadegheih · Pratibha Kumari · Prof. Dorit Merhof (University of Regensburg)</p>
+          <p class="entry-desc">Developing and evaluating loss functions for brain metastasis segmentation in MRI.</p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <p class="entry-title">Continual Learning for Out-of-Distribution Data</p>
+            <span class="entry-date">Jul 2026 &ndash; Present</span>
+          </div>
+          <p class="entry-sub">Collaborators: Yousef Sadegheih · Prof. Dorit Merhof (University of Regensburg)</p>
+          <p class="entry-desc">Studying continual-learning strategies for adapting medical image segmentation models to out-of-distribution data.</p>
+        </div>
 
         <div class="entry">
           <div class="entry-head">
@@ -415,6 +435,6 @@
   </div>
 
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
