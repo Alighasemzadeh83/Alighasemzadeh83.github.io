@@ -196,7 +196,7 @@ sections.forEach(s => spy.observe(s));
     interaction: { hover: true, tooltipDelay: 90, navigationButtons: false, keyboard: false, hideEdgesOnDrag: true },
     physics: {
       solver: 'barnesHut',
-      barnesHut: { gravitationalConstant: -20000, centralGravity: 0.16, springLength: 175, springConstant: 0.025, damping: 0.55, avoidOverlap: 0.85 },
+      barnesHut: { gravitationalConstant: -20000, centralGravity: 0.16, springLength: 220, springConstant: 0.025, damping: 0.55, avoidOverlap: 0.85 },
       stabilization: { iterations: 700, updateInterval: 40 }
     }
   };
