@@ -5,15 +5,14 @@ Source for [alighasemzadeh83.github.io](https://alighasemzadeh83.github.io), hos
 A single-page academic homepage built with plain **HTML, CSS, and JavaScript**
 (no build step, no framework). It presents:
 
-- A short bio and research interests (computer vision, estimation theory,
-  convex & semidefinite optimization, medical AI).
-- Research internship at The University of Hong Kong.
-- Publications & manuscripts, each with its method / main figure and a status
-  badge (accepted / under review / preprint).
-- Ongoing research projects and advisors.
+- A short bio and research interests (computer vision, medical AI, and
+  estimation theory).
+- Completed research internship at The University of Hong Kong.
+- Publications and manuscripts grouped by current status.
+- Research experience and advisors.
 - An **interactive collaboration network** of co-authors and advisors, grouped
   by institution ([vis-network](https://github.com/visjs/vis-network)).
-- Honors, teaching, and contact information.
+- Selected repositories, honors, teaching, and contact information.
 
 ## Structure
 
@@ -24,6 +23,17 @@ script.js    — theme toggle, scrollspy, collaboration network
 img/         — profile photo + paper figures
 Ali_Ghasemzadeh_CV.pdf
 ```
+
+## CV-to-site update checklist
+
+When updating the CV, keep the public website aligned:
+
+- Replace `Ali_Ghasemzadeh_CV.pdf` and confirm the sidebar CV button opens it.
+- Update the bio, research interests, internship, publications, research experience, honors, and teaching content in `index.html` as needed.
+- Keep News limited to completed milestones, acceptances, submissions, and other current updates.
+- Update the `PEOPLE`, `PAPERS`, and `PROJECTS` arrays in `script.js` so the collaboration graph matches the visible research and publication content.
+- Confirm each new paper image exists in `img/`; use a text-only publication card if no suitable figure is available.
+- Preview locally, check both light and dark modes, and verify all sidebar links and external links.
 
 ## Local preview
 

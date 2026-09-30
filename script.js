@@ -2,8 +2,9 @@
    Ali Ghasemzadeh — homepage interactions
    ========================================================= */
 
-/* ---------- footer year ---------- */
-document.getElementById('year').textContent = new Date().getFullYear();
+/* ---------- optional footer year ---------- */
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 /* ---------- theme toggle ---------- */
 const root = document.documentElement;
@@ -73,12 +74,12 @@ sections.forEach(s => spy.observe(s));
     ['azad','Reza Azad','europe','RWTH Aachen University',null,'https://scholar.google.com/citations?user=Qb5ildMAAAAJ'],
     ['samek','Wojciech Samek','europe','Fraunhofer HHI / TU Berlin',null,'https://scholar.google.com/citations?user=7aQwO08AAAAJ'],
     ['merhof','Dorit Merhof','europe','University of Regensburg',null,'https://scholar.google.com/citations?user=0c0rMr0AAAAJ'],
-    ['yousef','Yousef Sadegheih','europe','University of Regensburg',null,'https://scholar.google.com/citations?user=NbPKWfEAAAAJ'],
+    ['yousef','Yousef Sadegheih','europe','University of Regensburg','Collaborator · medical imaging','https://scholar.google.com/citations?user=NbPKWfEAAAAJ'],
     ['pratibha','Pratibha Kumari','europe','University of Regensburg',null,'https://scholar.google.com/citations?user=gm0ORicAAAAJ'],
     ['diba','Ali Diba','europe','KU Leuven',null,'https://scholar.google.com/citations?user=T9Kr7gEAAAAJ'],
     ['torr','Philip Torr','europe','University of Oxford',null,'https://scholar.google.com/citations?user=kPxa2w0AAAAJ'],
-    ['barletta','Luca Barletta','europe','Politecnico di Milano','Advisor · Excess estimation error','https://scholar.google.com/citations?user=vu_mjR0AAAAJ'],
-    ['kuo','Yong-Hong Kuo','hongkong','The University of Hong Kong','Internship supervisor','https://scholar.google.com/citations?user=9-ikdFAAAAAJ'],
+    // Archived: ['barletta','Luca Barletta','europe','Politecnico di Milano','Advisor · Excess estimation error','https://scholar.google.com/citations?user=vu_mjR0AAAAJ'],
+    ['kuo','Yong-Hong Kuo','hongkong','The University of Hong Kong','HKU internship supervisor · video diffusion','https://scholar.google.com/citations?user=9-ikdFAAAAAJ'],
     ['farnia','Farzan Farnia','hongkong','Chinese University of Hong Kong',null,'https://scholar.google.com/citations?user=GYPCqcYAAAAJ'],
     ['mirjalili','Seyedali Mirjalili','australia','Torrens University Australia','Advisor · Adaptive metaheuristics','https://scholar.google.com/citations?user=TJHmrREAAAAJ'],
     ['gandomi','Amir H. Gandomi','australia','University of Technology Sydney','Advisor','https://scholar.google.com/citations?user=VMf3wfMAAAAJ'],
@@ -87,10 +88,7 @@ sections.forEach(s => spy.observe(s));
     ['khalaj','Babak Khalaj','sharif','Sharif University of Technology',null,'https://scholar.google.com/citations?user=8HsoXAUAAAAJ'],
     ['bagci','Ulas Bagci','namerica','Northwestern University',null,'https://scholar.google.com/citations?user=9LUdPM4AAAAJ'],
     ['kolouri','Soheil Kolouri','namerica','Vanderbilt University',null,'https://scholar.google.com/citations?user=yREBSy0AAAAJ'],
-    ['fallah','Alireza Fallah','namerica','Rice University','Advisor · Market mechanism design','https://scholar.google.com/citations?user=2qkqvm4AAAAJ'],
-    ['dytso','Alex Dytso','namerica','Qualcomm / Princeton University','Advisor · Estimation theory','https://scholar.google.com/citations?user=oVxK8g0AAAAJ'],
-    ['esfandiari','Hossein Esfandiari','namerica','Google Research','Advisor · Batched bandits','https://scholar.google.com/citations?user=Rt8ppJsAAAAJ'],
-    ['samira','Samira Hossein Ghorban','other','IPM','Advisor · Batched bandits','https://scholar.google.com/citations?user=XAta_TgAAAAJ'],
+    // Archived: ['dytso','Alex Dytso','namerica','Qualcomm / Princeton University','Advisor · Estimation theory','https://scholar.google.com/citations?user=oVxK8g0AAAAJ'],
     ['armin','Armin Khosravi','other','Collaborator',null,null],
     ['babakhani','Erfan Babakhani','other','Collaborator',null,null],
     ['pariya','Pariya Ghasemzadeh','other','Collaborator',null,null],
@@ -108,27 +106,27 @@ sections.forEach(s => spy.observe(s));
 
   /* --- papers (id, short label, venue, author ids) --- */
   const PAPERS = [
-    ['p_prilora','PriLoRA','Accepted · MICCAI 2026', ['kazerouni','sanaz','aghayari','ali','azad','samek','merhof','brudno','taati']],
+    ['p_prilora','PriLoRA','Early accepted · MICCAI 2026', ['kazerouni','sanaz','aghayari','ali','azad','samek','merhof','brudno','taati']],
     ['p_rul','Reinforced Graph PINN','Accepted · Adv. Eng. Informatics', ['akbaripour','ali','bijarchi','shafii']],
     ['p_reward','Reward Engineering Review','Minor revision · ACME', ['ali','armin','mirzadi','akbaripour','mirjalili']],
-    ['p_spectral','Spectral Palette','Under review · AAAI', ['kazerouni','ali','armin','donya','babakhani','diba','kuo','brudno','taati']],
-    ['p_gnbg','GNBG-C','Under review · EJOR', ['ali','armin','babakhani','pariya','kuo','mirjalili','gandomi']],
-    ['p_domain','Joint Domain Evolution','Under review · AAAI', ['sadeghian','ali','tavakoli','naghdi','mokhtari','ghiyasi','khalaj','farnia','kolouri','diba']],
-    ['p_diffusion','Diffusion for CO','Under review · ISWA', ['armin','ali','babakhani','kazerouni','kuo','torr','mirjalili']],
-    ['p_manyminds','Multi-Rater Survey','Preprint', ['babakhani','armin','ali','pariya','sanaz','azad','bagci','merhof']],
-    ['p_refseg','Reference-Based Seg. Survey','Preprint', ['babakhani','ali','armin','pariya','kazerouni','kuo','mirjalili']]
+    ['p_gnbg','GNBG-C','Submitted · EJOR', ['ali','armin','babakhani','pariya','kuo','mirjalili','gandomi']],
+    ['p_diffusion','Diffusion for CO','Submitted · Intelligent Systems with Applications', ['armin','ali','babakhani','kazerouni','kuo','torr','mirjalili']],
+    ['p_spectral','Spectral Palette','In preparation · CVPR', ['kazerouni','ali','armin','donya','babakhani','diba','kuo','brudno','taati']],
+    // Archived: ['p_excess','Excess Estimation Error','In preparation · IEEE TIT', ['ali','dytso','barletta']],
+    ['p_brainmets','Brain Metastasis Segmentation','In preparation · IEEE ISBI', ['ali','yousef','armin','babakhani','kuo','merhof']],
+    ['p_adaptive','Adaptive Metaheuristic Selection','Manuscript in preparation', ['babakhani','armin','ali','mirjalili','gandomi']],
+    ['p_domain','Joint Domain Evolution','In preparation · TMLR', ['sadeghian','ali','tavakoli','naghdi','mokhtari','ghiyasi','khalaj','farnia','kolouri','diba']],
+    ['p_refseg','Text-Guided Medical Image Segmentation','In preparation · Medical Image Analysis', ['babakhani','ali','armin','pariya','kazerouni','kuo','mirjalili']],
+    ['p_manyminds','Multi-Rater Medical Image Segmentation','In preparation · Medical Image Analysis', ['babakhani','armin','ali','pariya','sanaz','azad','bagci','merhof']]
   ];
 
   /* --- ongoing projects (id, label, member ids) --- */
   const PROJECTS = [
-    ['x_brainmets','Brain Metastasis Segmentation', ['ali','yousef','pratibha','merhof']],
-    ['x_continual','Continual Learning (OOD)', ['ali','yousef','merhof']],
-    ['x_bandit','Adaptive Metaheuristics', ['ali','mirjalili','gandomi']],
-    ['x_excess','Excess Estimation Error', ['ali','dytso','barletta']],
-    ['x_invcdf','Inverse-CDF Differentiation', ['ali','dytso']],
-    ['x_sdp','SDP Structure', ['ali','mohajerin']],
-    ['x_batched','Batched Adversarial Bandit', ['ali','esfandiari','samira']],
-    ['x_market','Market Mechanism Design', ['ali','fallah']]
+    // Archived: ['x_jailbreak','Automated Jailbreak Evaluation for Video Diffusion', ['ali','kuo']],
+    // Archived: ['x_inversion','Automated Prompt Inversion for Video Diffusion', ['ali','kuo']],
+    ['x_continual','Continual Learning (OOD)', ['ali','yousef','pratibha','merhof']],
+    // Archived: ['x_invcdf','Inverse-CDF Differentiation', ['ali','dytso']],
+    ['x_sdp','SDP Structure', ['ali','mohajerin']]
   ];
 
   /* --- co-authorship: connect people who share a paper or project --- */
