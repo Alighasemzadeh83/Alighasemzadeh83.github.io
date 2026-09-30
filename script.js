@@ -57,9 +57,10 @@ sections.forEach(s => spy.observe(s));
     me:        { label: 'Ali Ghasemzadeh', color: '#f4c430' },
     sharif:    { label: 'Sharif Univ. of Technology', color: '#14b8a6' },
     toronto:   { label: 'University of Toronto', color: '#3b82f6' },
-    hongkong:  { label: 'Hong Kong (HKU / CUHK)', color: '#a855f7' },
+    hongkong:  { label: 'Hong Kong (HKU / HKUST / CUHK)', color: '#a855f7' },
     australia: { label: 'Australia (Torrens / UTS)', color: '#fb923c' },
     qatar:     { label: 'Qatar (QCRI)', color: '#0ea5e9' },
+    amirkabir: { label: 'Amirkabir Univ. of Technology', color: '#e879f9' },
     europe:    { label: 'Europe', color: '#22c55e' },
     namerica:  { label: 'North America', color: '#f43f5e' },
     other:     { label: 'Other collaborators', color: '#94a3b8' }
@@ -94,15 +95,15 @@ sections.forEach(s => spy.observe(s));
     ['babakhani','Erfan Babakhani','sharif','Sharif University of Technology',null,null],
     ['pariya','Pariya Ghasemzadeh','other','Collaborator',null,null],
     ['sanaz','Sanaz Karimi Jafarbigloo','europe','University of Regensburg',null,'https://scholar.google.com/citations?user=yRCzzX0AAAAJ'],
-    ['aghayari','Ali Aghayari','other','Collaborator',null,'https://scholar.google.com/citations?user=JSR6GGoAAAAJ'],
-    ['akbaripour','Mohamadreza Akbari Pour','other','Collaborator',null,null],
+    ['aghayari','Ali Aghayari','hongkong','Hong Kong University of Science and Technology (HKUST)',null,'https://scholar.google.com/citations?user=JSR6GGoAAAAJ'],
+    ['akbaripour','Mohamadreza Akbari Pour','sharif','Sharif University of Technology',null,null],
     ['mirzadi','Mohamad Mirzadi','sharif','Sharif University of Technology',null,null],
-    ['donya','Donya Jafari','other','Collaborator',null,null],
+    ['donya','Donya Jafari','toronto','University of Toronto',null,null],
     ['sadeghian','Ali Sadeghian','sharif','Sharif University of Technology',null,null],
     ['tavakoli','Seyedreza Tavakoli','sharif','Sharif University of Technology',null,null],
     ['naghdi','Amir Naghdi','sharif','Sharif University of Technology',null,null],
     ['mokhtari','Aria Mokhtari','sharif','Sharif University of Technology',null,null],
-    ['ghiyasi','Mahdi Ghiyasi','other','Collaborator',null,null]
+    ['ghiyasi','Mahdi Ghiyasi','amirkabir','Amirkabir University of Technology',null,null]
   ];
 
   /* --- papers (id, short label, venue, author ids) --- */
